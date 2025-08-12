@@ -18,8 +18,16 @@ from django.contrib import admin
 from django.urls import path
 
 from try2.views import index
+from modeltest.views import post_list, search
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",index)
+    path("",index),
+    path("posts/", post_list),
+    path("search/", search)
 ]
+
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

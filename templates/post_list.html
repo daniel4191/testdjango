@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>index 페이지</h1>
+    <h1>post list</h1>
+    {% for post in posts %}
+        <p>{{post.title}} </p>
+        <p>{{post.content}} </p>
+    {% endfor %}
 </body>
 </html>
